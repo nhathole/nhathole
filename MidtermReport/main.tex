@@ -76,8 +76,6 @@
 
 \input{LoiNoiDau} % Lời nói đầu.
 
-\input{LoiCamDoan} % Lời cam đoan.
-
 % Tạo mục lục tự động
 \addtocontents{toc}{\protect\thispagestyle{empty}}
 \tableofcontents 
@@ -111,6 +109,9 @@
 \section*{CHƯƠNG 2.  CƠ SỞ LÝ THUYẾT}
 \addcontentsline{toc}{section}{\numberline{}CHƯƠNG 2.  CƠ SỞ LÝ THUYẾT}
 \setcounter{section}{2}
+\setcounter{subsection}{0}
+\setcounter{equation}{0}
+\setcounter{theorem}{0}
 \setcounter{figure}{0}
 \setcounter{table}{0}
 
@@ -119,6 +120,8 @@
 \addcontentsline{toc}{section}{\numberline{}CHƯƠNG 3. THUẬT TOÁN}
 \setcounter{section}{3}
 \setcounter{subsection}{0}
+\setcounter{equation}{0}
+\setcounter{theorem}{0}
 \setcounter{figure}{0}
 \setcounter{table}{0}
 
@@ -126,6 +129,9 @@
 \section*{CHƯƠNG 4. THÍ NGHIỆM VÀ KẾT QUẢ}
 \addcontentsline{toc}{section}{\numberline{}CHƯƠNG 4. THÍ NGHIỆM VÀ KẾT QUẢ}
 \setcounter{section}{4}
+\setcounter{subsection}{0}
+\setcounter{equation}{0}
+\setcounter{theorem}{0}
 \setcounter{figure}{0}
 \setcounter{table}{0}
 
@@ -144,6 +150,7 @@
 \newpage
 \phantomsection\addcontentsline{toc}{section}{\numberline {}TÀI LIỆU THAM KHẢO}
 \bibliographystyle{IEEEtran}
+\nocite{*} % Liệt kê toàn bộ tài liệu trong MyRef.bib, kể cả tài liệu chưa được trích dẫn
 \bibliography{MyRef}
 \newpage
 \input{PhuLuc} % Phụ lục nếu có
