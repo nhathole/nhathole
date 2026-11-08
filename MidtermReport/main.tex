@@ -21,7 +21,7 @@
 \setcounter{secnumdepth}{4} % 4 Heading
 \titlespacing*{\section}{0pt}{0pt}{30pt} % Heading 1
 % Định dạng hiển thị: Tự động thêm tiền tố "CHƯƠNG X. "
-\titleformat{\section}{\fontsize{16pt}{0pt}\selectfont \bfseries \centering}{CHƯƠNG \thesection.\ }{0pt}{}
+\titleformat{\section}{\fontsize{16pt}{0pt}\selectfont \bfseries \centering}{CHAPTER \thesection.\ }{0pt}{}
 
 \titlespacing*{\subsection}{0pt}{10pt}{0pt} % Heading 2
 \titleformat*{\subsection}{\fontsize{14pt}{0pt}\selectfont \bfseries}
@@ -52,16 +52,16 @@
 \newcolumntype{g}{>{\hsize=5\hsize}X}
 \renewcommand{\tabularxcolumn}[1]{>{\small}m{#1}}
 
-\newtheorem{theorem}{Định lý}[section]
-\newtheorem{defn}[theorem]{Định nghĩa}
-\newtheorem{corollary}[theorem]{Hệ quả}
-\newtheorem{lemma}[theorem]{Bổ đề}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{defn}[theorem]{Definition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
 
 \usepackage{lipsum} % Thư viện tạo chữ linh tinh.
-\renewcommand{\contentsname}{MỤC LỤC}
-\renewcommand{\listfigurename}{DANH MỤC HÌNH VẼ}
-\renewcommand{\listtablename}{DANH MỤC BẢNG BIỂU}
-\renewcommand{\refname}{TÀI LIỆU THAM KHẢO}
+\renewcommand{\contentsname}{TABLE OF CONTENTS}
+\renewcommand{\listfigurename}{LIST OF FIGURES}
+\renewcommand{\listtablename}{LIST OF TABLES}
+\renewcommand{\refname}{REFERENCES}
 
 \usepackage[unicode]{hyperref}
 \usepackage{colortbl}
@@ -88,14 +88,14 @@
 {\let\oldnumberline\numberline
 \renewcommand{\numberline}{Figure~\oldnumberline}
 \listoffigures} 
-\phantomsection\addcontentsline{toc}{section}{\numberline {} DANH MỤC HÌNH VẼ}
+\phantomsection\addcontentsline{toc}{section}{\numberline {} LIST OF FIGURES}
 \newpage
 
 % Tạo danh mục bảng biểu.
 {\let\oldnumberline\numberline
 \renewcommand{\numberline}{Table~\oldnumberline}
 \listoftables}
-\phantomsection\addcontentsline{toc}{section}{\numberline {} DANH MỤC BẢNG BIỂU}
+\phantomsection\addcontentsline{toc}{section}{\numberline {} LIST OF TABLES}
 \newpage
 
 \input{Abstract} % Tóm tắt đồ án 
@@ -112,24 +112,24 @@
 \clearpage
 \input{Chapter5} % Chương 5: tóm tắt tài liệu [5] (Sabato2025)
 \clearpage
-\section*{KẾT LUẬN}
-\phantomsection\addcontentsline{toc}{section}{\numberline {}KẾT LUẬN}
-\subsection*{Kết luận chung}
-\phantomsection\addcontentsline{toc}{section}{\numberline {}Kết luận chung}
+\section*{CONCLUSION}
+\phantomsection\addcontentsline{toc}{section}{\numberline {}CONCLUSION}
+\subsection*{General Conclusions}
+\phantomsection\addcontentsline{toc}{section}{\numberline {}General Conclusions}
 % - Gợi ý: bảng so sánh 5 tài liệu (tần số, kịch bản, loại SES, kiểm chứng, kết quả nổi bật).
 % - Xu hướng: đưa SES vào hạ tầng sẵn có, ít ảnh hưởng thẩm mỹ (cột đèn, cửa kính); tái cấu hình giá rẻ (trung gian SES-RIS);
 % - thiết kế theo trường gần/trường thực; từ mô phỏng sang đo và liên kết thật; mở rộng lên 60 GHz, kết hợp định vị.
 
-\subsection*{Hướng phát triển}
-\phantomsection\addcontentsline{toc}{section}{\numberline {}Hướng phát triển}
+\subsection*{Future Work}
+\phantomsection\addcontentsline{toc}{section}{\numberline {}Future Work}
 % - Vấn đề mở: dải pha ô đơn vị < 360 độ; nhạy tần số; đánh đổi kích thước-thẩm mỹ-chi phí;
 % - nhiễu chéo khi dùng nhiều SES; còn thiếu đo kiểm ngoài thực địa.
 
-\subsection*{Kiến nghị và đề xuất}
-\phantomsection\addcontentsline{toc}{section}{\numberline {}Kiến nghị và đề xuất}
+\subsection*{Recommendations}
+\phantomsection\addcontentsline{toc}{section}{\numberline {}Recommendations}
 
 \newpage
-\phantomsection\addcontentsline{toc}{section}{\numberline {}TÀI LIỆU THAM KHẢO}
+\phantomsection\addcontentsline{toc}{section}{\numberline {}REFERENCES}
 \bibliographystyle{IEEEtran}
 \nocite{*} % Liệt kê toàn bộ tài liệu trong MyRef.bib, kể cả tài liệu chưa được trích dẫn
 \bibliography{MyRef}
