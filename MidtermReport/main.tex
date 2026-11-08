@@ -102,47 +102,180 @@
 
 \pagenumbering{arabic} % Đánh số thứ tự 1,2,3...
 
-\section{CHƯƠNG MỞ ĐẦU}
+\section*{CHƯƠNG 1. SES CONG GẮN CỘT ĐÈN ĐÔ THỊ}
+\addcontentsline{toc}{section}{\numberline{}CHƯƠNG 1. SES CONG GẮN CỘT ĐÈN ĐÔ THỊ}
+\setcounter{section}{1}
+\setcounter{subsection}{0}
+\setcounter{equation}{0}
+\setcounter{theorem}{0}
+\setcounter{figure}{0}
+\setcounter{table}{0}
+% Tóm tắt tài liệu: A. Freni et al., Electronics, 2023 -- \cite{Freni2023}
+
+\subsection{Bối cảnh và vấn đề}
+% - SES phẳng gắn tường không phải lúc nào cũng lắp được: hướng tòa nhà, tường nhiều cửa sổ, công trình di sản.
+% - Kịch bản: quảng trường có chợ, băng 5G mmWave của Ý 26,5-27,5 GHz; trạm gốc cao 6,3 m (MIMO 16x16).
+
+\subsection{Giải pháp đề xuất}
+% - SES cong quấn quanh cột đèn / cột đèn giao thông, giấu trong radome hình trụ (đường kính <= 300 mm).
+% - Xoay được trên cột; gắn được nhiều SES trên một cột.
+
+\subsection{Thiết kế}
+% - 55x62 ô (tương đương 300x340 mm), bán kính cong nhỏ nhất 175 mm.
+% - Patch vuông trên DiClad527 dày 0,8 mm (uốn được), ô 5,45 mm (lambda/2); dải pha ~290 độ.
+% - Trễ pha từng ô theo PT (1) của bài.
+
+\subsection{Kết quả}
+% - Mô phỏng CST: RCS cực đại cao hơn SES phẳng cùng thể tích ~3 dB.
+% - Radome PTFE giảm 0,9 dB, Lexan giảm 1,2 dB; góc tới lệch +-3 độ -> chùm lệch theo (tinh chỉnh khi lắp).
+% - SES cách trạm 45 m tạo búp cosec^2 phủ một con phố NLOS.
+% - Gợi ý hình: Fig. 2 (cột đèn + SES trong radome).
+% - Gợi ý PT: S_i = EIRP/(4 pi d^2), S_s = S_i sigma/(4 pi R^2), sigma là RCS.
+
+\subsection{Nhận xét}
+% - Chỉ mô phỏng; dải pha < 360 độ; SES nhỏ nên công suất tán xạ thấp hơn sóng trực tiếp ~20 dB.
 
 \clearpage
-
-\section*{CHƯƠNG 2.  CƠ SỞ LÝ THUYẾT}
-\addcontentsline{toc}{section}{\numberline{}CHƯƠNG 2.  CƠ SỞ LÝ THUYẾT}
+\section*{CHƯƠNG 2. SES CONG QUÉT CHÙM BẰNG CÁCH XOAY}
+\addcontentsline{toc}{section}{\numberline{}CHƯƠNG 2. SES CONG QUÉT CHÙM BẰNG CÁCH XOAY}
 \setcounter{section}{2}
 \setcounter{subsection}{0}
 \setcounter{equation}{0}
 \setcounter{theorem}{0}
 \setcounter{figure}{0}
 \setcounter{table}{0}
+% Tóm tắt tài liệu: M. Beccaria et al., Scientific Reports, 2025 -- \cite{Beccaria2025B}
 
-\newpage
-\section*{CHƯƠNG 3. THUẬT TOÁN}
-\addcontentsline{toc}{section}{\numberline{}CHƯƠNG 3. THUẬT TOÁN}
+\subsection{Bối cảnh và vấn đề}
+% - SES ở chương 1 có chùm cố định (chỉ chỉnh được ~+-3 độ).
+% - RIS quét được chùm nhưng đắt, phức tạp (diode PIN, MEMS, mạng điều khiển).
+
+\subsection{Giải pháp đề xuất}
+% - SES đồng tâm với cột, xoay cơ khí quanh cột; tấm che kim loại cố định chỉ để lộ một "cửa sổ".
+% - Xoay góc alpha -> phần SES khác được chiếu -> chùm đổi hướng ~2*alpha.
+
+\subsection{Thiết kế}
+% - Chia 5 vùng: vùng 1, 3, 5 trỏ các hướng khác nhau; vùng 2, 4 chuyển tiếp (phương pháp bifocal).
+% - Ô đơn vị: patch vuông có khe chữ thập, radome Lexan 1 mm tích hợp vào ô; chu kỳ 3,6 mm (< lambda/3); dải pha < 300 độ.
+% - 150x40 ô, bán kính 175 mm, f0 = 27 GHz.
+
+\subsection{Kết quả}
+% - Gần trùng SES chùm cố định cùng kích thước (lệch <= 1 dB).
+% - alpha từ -21 đến +7 độ -> hướng chùm từ -9,3 đến 50,6 độ; RCS giữ trong 1 dB tới ~43 độ.
+% - Bền với sai số: bán kính +-1 mm, epsilon_r +-2%.
+% - Gợi ý: Fig. 4 (nguyên lý) + Table 1 của bài (alpha -> hướng chùm -> RCS) làm bảng.
+
+\subsection{Nhận xét}
+% - Chưa chế tạo và đo; cần cơ cấu xoay; RCS giảm ~2,5 dB khi chùm ở gần 50 độ.
+
+\clearpage
+\section*{CHƯƠNG 3. SES TRONG SUỐT QUANG HỌC CHO 5G}
+\addcontentsline{toc}{section}{\numberline{}CHƯƠNG 3. SES TRONG SUỐT QUANG HỌC CHO 5G}
 \setcounter{section}{3}
 \setcounter{subsection}{0}
 \setcounter{equation}{0}
 \setcounter{theorem}{0}
 \setcounter{figure}{0}
 \setcounter{table}{0}
+% Tóm tắt tài liệu: M. K. T. Al-Nuaimi et al., IEEE Antennas Wireless Propag. Lett., 2026 -- \cite{AlNuaimi2026}
 
-\newpage
-\section*{CHƯƠNG 4. THÍ NGHIỆM VÀ KẾT QUẢ}
-\addcontentsline{toc}{section}{\numberline{}CHƯƠNG 4. THÍ NGHIỆM VÀ KẾT QUẢ}
+\subsection{Bối cảnh và vấn đề}
+% - SES thông thường đục, gây mất thẩm mỹ.
+% - Khó vừa băng rộng vừa giữ hướng chùm ổn định trên cả hai băng n258 và n257.
+
+\subsection{Giải pháp đề xuất}
+% - SES trong suốt quang học, dán lên cửa kính tòa nhà, không cần nguồn.
+
+\subsection{Thiết kế}
+% - Màng ITO 2,5 Ohm/sq trên kính soda-lime; 2 lớp kính kẹp khe khí 1 mm (tăng băng thông, giảm suy hao).
+% - Bộ cộng hưởng ITO bát giác, ghép 2 loại ô để đủ 0-360 độ; 40x40 ô, 200x200x2,1 mm.
+% - Góc tới 15 độ (trạm cách 10 m), góc phản xạ 37 độ; pha theo PT (1) của bài.
+% - Gợi ý PT: phi_i = k0 [d_i - sin(theta_r)(x_i cos(phi_r) + y_i sin(phi_r))] + phi_0.
+
+\subsection{Kết quả}
+% - Mô phỏng và đo trong buồng đo (2 anten loa + VNA) khớp nhau: góc phản xạ 37 +- 3 độ trên 24-30 GHz.
+% - Độ trong suốt đo được 73,7% (bước sóng 380-760 nm).
+% - Gợi ý hình: Fig. 1 (kịch bản) hoặc Fig. 9 (mẫu chế tạo).
+
+\subsection{Nhận xét}
+% - ITO gây suy hao (ô đơn vị tới gần 4 dB); đo và mô phỏng còn lệch (căn chỉnh, epsilon_r của kính, R_sheet thực 2,27 Ohm/sq).
+% - Mới đo trong buồng đo, chưa đo ngoài thực tế.
+
+\clearpage
+\section*{CHƯƠNG 4. SES CHO TRUYỀN THÔNG TRƯỜNG GẦN}
+\addcontentsline{toc}{section}{\numberline{}CHƯƠNG 4. SES CHO TRUYỀN THÔNG TRƯỜNG GẦN}
 \setcounter{section}{4}
 \setcounter{subsection}{0}
 \setcounter{equation}{0}
 \setcounter{theorem}{0}
 \setcounter{figure}{0}
 \setcounter{table}{0}
+% Tóm tắt tài liệu: A. F. Vaquero et al., IEEE Open J. Antennas Propag., 2026 -- \cite{Vaquero2026}
 
-\newpage
+\subsection{Bối cảnh và vấn đề}
+% - SES lớn hàng chục lambda -> trường xa bắt đầu ~40 m -> người dùng trong nhà nằm trong trường gần.
+% - Đa số thiết kế vẫn giả thiết sóng tới là sóng phẳng.
+% - Gợi ý PT: khoảng cách trường xa d_F = 2 D^2 / lambda.
+
+\subsection{Giải pháp đề xuất}
+% - Thiết kế SES theo trường tới thực từ trạm gốc để phủ một điểm mù tĩnh; đánh giá cả RF lẫn truyền dữ liệu.
+
+\subsection{Thiết kế}
+% - Trạm gốc giả lập bằng reflectarray 400x400 mm (đo được 32,4 dBi); SES cùng kích thước, patch 1 lớp DiClad 880, dải pha ~270 độ.
+% - Tổng hợp pha: Intersection Approach tổng quát + tối ưu Levenberg-Marquardt, ràng buộc dải pha 270 độ.
+% - Đổi hướng 46 độ, đồng thời nghiêng và làm rộng chùm (+-5 x +-3 độ); đối chứng với tấm kim loại cùng kích thước.
+
+\subsection{Kết quả}
+% - Đo ở 24,45 GHz: gợn < 1,5 dB tại mặt phẳng thiết kế (4,6 m); tấm kim loại chỉ phản xạ gương, vệt 2-3 độ, gợn 5-10 dB.
+% - Liên kết SDR (USRP): 64-QAM EVM -29,9 dB, SER < 1e-5, ~1,5 Gbit/s trên 400 MHz; tấm kim loại: QPSK EVM -13,2 dB.
+% - Gợi ý hình: Fig. 1 (kịch bản) hoặc Fig. 14 (chòm sao QAM).
+
+\subsection{Nhận xét}
+% - Chỉ một kịch bản phòng lab; nhiễu pha và giới hạn phần cứng làm EVM bão hòa.
+
+\clearpage
+\section*{CHƯƠNG 5. SES 60 GHz CHO TRUYỀN THÔNG VÀ ĐỊNH VỊ}
+\addcontentsline{toc}{section}{\numberline{}CHƯƠNG 5. SES 60 GHz CHO TRUYỀN THÔNG VÀ ĐỊNH VỊ}
+\setcounter{section}{5}
+\setcounter{subsection}{0}
+\setcounter{equation}{0}
+\setcounter{theorem}{0}
+\setcounter{figure}{0}
+\setcounter{table}{0}
+% Tóm tắt tài liệu: C. Sabato, luận văn thạc sĩ, Politecnico di Torino, 2025 -- \cite{Sabato2025}
+
+\subsection{Bối cảnh và vấn đề}
+% - Vùng mù 60 GHz giữa hai phòng ngăn bởi một bức tường.
+
+\subsection{Giải pháp đề xuất}
+% - Dùng nhiều SES để phủ sóng.
+% - Biết đáp ứng theo góc của từng SES -> định vị thụ động (xác định khu vực của thiết bị phát).
+
+\subsection{Thiết kế}
+% - Loại FR4 (suy hao cao), chọn Rogers RO3003; so sánh độ dày, chọn 0,51 mm (đủ 360 độ, ổn định khi tới xiên 0-50 độ).
+% - Quy trình: pha yêu cầu -> nội suy đường cong S ra kích thước patch -> MATLAB xuất DXF -> mô phỏng CST.
+
+\subsection{Kết quả}
+% - SES 10x10 và 24x24 đổi hướng đúng 30 độ; gần 62 GHz búp phụ tăng rõ.
+% - Ray-tracing chọn bố trí chữ "W" ít nhiễu chéo nhất; thiết kế 8 SES (20x20 ô): đa số đúng hướng, vài SES nhạy tần số.
+
+\subsection{Nhận xét}
+% - Chỉ mô phỏng; mảng nhỏ -> búp phụ, phản xạ gương; hướng tiếp: mô phỏng môi trường thực, đo kiểm.
+% - Do Pirinoli và Beccaria (tác giả các bài ở chương 1, 2) hướng dẫn.
+
+\clearpage
 \section*{KẾT LUẬN}
 \phantomsection\addcontentsline{toc}{section}{\numberline {}KẾT LUẬN}
 \subsection*{Kết luận chung}
 \phantomsection\addcontentsline{toc}{section}{\numberline {}Kết luận chung}
+% - Gợi ý: bảng so sánh 5 tài liệu (tần số, kịch bản, loại SES, kiểm chứng, kết quả nổi bật).
+% - Xu hướng: đưa SES vào hạ tầng sẵn có, ít ảnh hưởng thẩm mỹ (cột đèn, cửa kính); tái cấu hình giá rẻ (trung gian SES-RIS);
+% - thiết kế theo trường gần/trường thực; từ mô phỏng sang đo và liên kết thật; mở rộng lên 60 GHz, kết hợp định vị.
 
 \subsection*{Hướng phát triển}
 \phantomsection\addcontentsline{toc}{section}{\numberline {}Hướng phát triển}
+% - Vấn đề mở: dải pha ô đơn vị < 360 độ; nhạy tần số; đánh đổi kích thước-thẩm mỹ-chi phí;
+% - nhiễu chéo khi dùng nhiều SES; còn thiếu đo kiểm ngoài thực địa.
 
 \subsection*{Kiến nghị và đề xuất}
 \phantomsection\addcontentsline{toc}{section}{\numberline {}Kiến nghị và đề xuất}
