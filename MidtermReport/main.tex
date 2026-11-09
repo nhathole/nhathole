@@ -32,9 +32,9 @@
 \titlespacing*{\paragraph}{0pt}{10pt}{0pt} % Heading 4
 \titleformat*{\paragraph}{\fontsize{13pt}{0pt}\selectfont \itshape}
 
-\renewcommand{\figurename}{Fig.}
-\usepackage[font=small]{caption} % Caption không in đậm, cỡ \small (~12pt), nhỏ hơn chữ thường (13pt)
-\captionsetup[figure]{labelsep=space}
+\renewcommand{\figurename}{Figure}
+\usepackage[font=small]{caption} % Caption cỡ \small (~12pt), nhỏ hơn chữ thường (13pt); chỉ nhãn "Figure x.y" in đậm
+\captionsetup[figure]{labelsep=space,labelfont=bf}
 
 \renewcommand{\tablename}{Table}
 \captionsetup[table]{labelsep=space}
@@ -84,7 +84,7 @@
 
 % Tạo danh mục hình vẽ.
 {\let\oldnumberline\numberline
-\renewcommand{\numberline}{Fig.~\oldnumberline}
+\renewcommand{\numberline}{Figure~\oldnumberline}
 \listoffigures} 
 \phantomsection\addcontentsline{toc}{section}{\numberline {} LIST OF FIGURES}
 \newpage
