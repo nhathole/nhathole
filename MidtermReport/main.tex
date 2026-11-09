@@ -32,11 +32,11 @@
 \titlespacing*{\paragraph}{0pt}{10pt}{0pt} % Heading 4
 \titleformat*{\paragraph}{\fontsize{13pt}{0pt}\selectfont \itshape}
 
-\renewcommand{\figurename}{\fontsize{12pt}{0pt}\selectfont \bfseries Figure}
-\usepackage[font=bf]{caption}
+\renewcommand{\figurename}{Fig.}
+\usepackage[font=small]{caption} % Caption không in đậm, cỡ \small (~12pt), nhỏ hơn chữ thường (13pt)
 \captionsetup[figure]{labelsep=space}
 
-\renewcommand{\tablename}{\fontsize{12pt}{0pt}\selectfont \bfseries Table}
+\renewcommand{\tablename}{Table}
 \captionsetup[table]{labelsep=space}
 
 % Tự động đánh số theo dạng Section.Số và tự reset ở mỗi chương mới
@@ -86,7 +86,7 @@
 
 % Tạo danh mục hình vẽ.
 {\let\oldnumberline\numberline
-\renewcommand{\numberline}{Figure~\oldnumberline}
+\renewcommand{\numberline}{Fig.~\oldnumberline}
 \listoffigures} 
 \phantomsection\addcontentsline{toc}{section}{\numberline {} LIST OF FIGURES}
 \newpage
