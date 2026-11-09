@@ -11,21 +11,21 @@
 \setcounter{table}{0}
 
 \subsection{Problem}
-The curved SES of Chapter~1 is passive and has a fixed beam: rotating it around the pole adjusts the pointing direction only within about $\pm 3^\circ$~\cite{Beccaria2025B}. Reconfigurable intelligent surfaces (RISs) can scan the beam, but each cell needs a PIN diode, MEMS switch or liquid crystal, plus a control network, which makes them complex and expensive~\cite{Beccaria2025B}. In many outdoor scenarios the beam only needs to be re-pointed occasionally after installation. No existing passive, low-cost SES can scan its beam in this way.
+The curved SES of Chapter~1 is passive and has a fixed beam: rotating it around the pole adjusts the pointing direction only within about $\pm 3^\circ$~\cite{Beccaria2025B}. Reconfigurable intelligent surfaces (RISs) can scan the beam, but each cell needs a PIN diode, micro-electro-mechanical systems (MEMS) switch or liquid crystal, plus a control network, which makes them complex and expensive~\cite{Beccaria2025B}. In many outdoor scenarios the beam only needs to be re-pointed occasionally after installation. Beccaria \textit{et al.}~\cite{Beccaria2025B} point out that no passive, low-cost SES could scan its beam in this way.
 
 \subsection{Contributions and Methodology}
 Beccaria \textit{et al.}~\cite{Beccaria2025B} propose a passive curved SES that is concentric with the pole and steers its reflected beam when mechanically rotated around the pole by an angle $\alpha$ (Fig.~\ref{fig:ch2-principle}). According to the authors, this configuration is the first of its kind. A fixed metallic shutter exposes only a ``visible window'' of the skin to the BS, so each rotation angle illuminates a different part of the phase map. The design has three elements:
 \begin{itemize}
-    \item \textbf{Region-based phase map.} The skin is divided into five regions. Regions 1, 3 and 5 point the beam to one end, the centre and the other end of the scan range. Regions 2 and 4 are transitions designed with a bifocal approach: each takes the average of the phase delays of the central region and the adjacent end region,
+    \item \textbf{Region-based phase map.} The skin is divided into five regions. Regions 1, 3 and 5 point the beam to one end, the centre and the other end of the scan range. Regions 2 and 4 are transitions designed with a bifocal approach: each takes the average of the phase delays of the central region and the adjacent end region. The paper~\cite{Beccaria2025B} states this rule in words; written as equations (our formalization), it reads
     \begin{equation}\label{eq:ch2-transition}
     \Delta\varphi^{(2)}_{ij} = \tfrac{1}{2}\bigl(\Delta\varphi^{(1)}_{ij} + \Delta\varphi^{(3)}_{ij}\bigr), \qquad
     \Delta\varphi^{(4)}_{ij} = \tfrac{1}{2}\bigl(\Delta\varphi^{(3)}_{ij} + \Delta\varphi^{(5)}_{ij}\bigr),
     \end{equation}
-    where $\Delta\varphi^{(r)}_{ij}$ is the delay that cell $ij$ would need to point the beam in the direction assigned to region $r$~\cite{Beccaria2025B}.
+    where $\Delta\varphi^{(r)}_{ij}$ is the delay that cell $ij$ would need to point the beam in the direction assigned to region $r$.
     \item \textbf{Unit cell with integrated radome.} The cell is a square patch with a cross-shaped slot (arm width 0.4~mm, 0.2~mm from the patch edge) on a 0.508~mm grounded DiClad~527 substrate ($\varepsilon_r = 2.55$, $\tan\delta = 0.0022$). It is covered directly by a 1~mm Lexan radome ($\varepsilon_r = 2.8$, $\tan\delta = 0.01$), which also holds the substrate in its curved shape. The period is 3.6~mm, slightly below $\lambda_0/3$ at 27~GHz. Limiting the patch size to $W = 1.5$--$3.1$~mm avoids higher-order resonances. This gives a phase range slightly below $300^\circ$, with $|S_{11}| \geq -1$~dB for incidence angles from $0^\circ$ to $60^\circ$ (Floquet analysis in CST).
     \item \textbf{Design example.} The skin has $150 \times 40$ cells bent to a 175~mm radius, typical of light poles. It is designed at 27~GHz to scan $0^\circ$--$50^\circ$ in the horizontal plane. The central region ($63 \times 40$ cells) points at $\varphi_{\max} = 35^\circ$, and the visible window contains $84 \times 40$ cells.
 \end{itemize}
-Rotating the skin by $\alpha$ moves the visible window along the phase map, so the beam turns by approximately twice the rotation angle~\cite{Beccaria2025B}:
+Rotating the skin by $\alpha$ moves the visible window along the phase map. According to~\cite{Beccaria2025B}, the beam then turns by about twice the rotation angle, which we formalize as the approximate relation
 \begin{equation}\label{eq:ch2-steering}
 \varphi_{\max}(\alpha) \approx \varphi_{\max}(0) + 2\alpha .
 \end{equation}

@@ -15,13 +15,13 @@ RISs can follow users, but large-scale deployment is limited by their power supp
 \begin{equation}\label{eq:ch4-fraunhofer}
 d_F = \frac{2D^2}{\lambda},
 \end{equation}
-where $D$ is the largest dimension of the aperture and $\lambda$ the wavelength. For a $30\lambda \times 30\lambda$ SES at about 30~GHz ($D \approx 0.42$~m along the diagonal, $\lambda = 10$~mm), \eqref{eq:ch4-fraunhofer} gives about 36~m, in line with the roughly 40~m quoted in~\cite{Vaquero2026}. Indoor users therefore sit in the near field, where the usual plane-wave, far-field design does not hold. Cost is a second constraint: cheap single-layer patch cells cannot provide a full $360^\circ$ phase cycle.
+where $D$ is the largest dimension of the aperture and $\lambda$ the wavelength~\cite[Ch.~2]{Balanis2016}. For a $30\lambda \times 30\lambda$ SES at about 30~GHz ($D \approx 0.42$~m along the diagonal, $\lambda = 10$~mm), \eqref{eq:ch4-fraunhofer} gives about 36~m, in line with the roughly 40~m quoted in~\cite{Vaquero2026}. Indoor users therefore sit in the near field, where the usual plane-wave, far-field design does not hold. Cost is a second constraint: cheap single-layer patch cells cannot provide a full $360^\circ$ phase cycle.
 
 \subsection{Contributions and Methodology}
 Vaquero \textit{et al.}~\cite{Vaquero2026} design, build and test an SES that removes a static blind spot in a realistic indoor scenario at 24.45~GHz. They make three contributions:
 \begin{enumerate}
     \item a near-field synthesis that uses the actual field radiated by the BS and the limited phase range of the unit cell;
-    \item RF validation in a real laboratory;
+    \item radio-frequency (RF) validation in a real laboratory;
     \item an end-to-end near-field communication (NFC) link evaluated with the error vector magnitude (EVM) and the symbol error rate (SER).
 \end{enumerate}
 \begin{itemize}
@@ -34,7 +34,7 @@ Vaquero \textit{et al.}~\cite{Vaquero2026} design, build and test an SES that re
         \item The SES redirects the beam to $46^\circ$ in azimuth and widens it to cover $\pm 5^\circ$ (azimuth) $\times$ $\pm 3^\circ$ (elevation) around the blind spot.
         \item A two-stage synthesis tightens the ripple target from 2~dB over 75\% of the region to 1.5~dB over 100\%.
     \end{itemize}
-    \item \textbf{NFC testbed.} Two USRP N210 software-defined radios with mmWave mixers and amplifiers transmit single-carrier subchannels of 6.5~MHz spaced by 8~MHz (50 subchannels in 400~MHz). The receiver is a monopole antenna 1.5~m above the floor.
+    \item \textbf{NFC testbed.} Two universal software radio peripheral (USRP) N210 software-defined radios with mmWave mixers and amplifiers transmit single-carrier subchannels of 6.5~MHz spaced by 8~MHz (50 subchannels in 400~MHz). The receiver is a monopole antenna 1.5~m above the floor.
 \end{itemize}
 The spectral efficiency of this architecture is~\cite{Vaquero2026}
 \begin{equation}\label{eq:ch4-se}
@@ -45,7 +45,7 @@ where $M$ is the constellation order. The factor $5/8$ comes from the 5~Msymbol/
 \subsection{Limitations of the Approach}
 \begin{itemize}
     \item The cheap single-layer cell offers only $270^\circ$ of usable phase. The synthesis respects this limit, but the limit still constrains the achievable patterns.
-    \item The laboratory fixes the scenario: one blind spot, one BS position, and results reported for x-polarization only. The BS is a passive reflectarray emulating a massive-MIMO station.
+    \item The laboratory fixes the scenario: one blind spot, one BS position, and results reported for x-polarization only. The BS is a passive reflectarray emulating a massive multiple-input multiple-output (MIMO) station.
     \item The link test uses narrow 6.5~MHz subchannels (limited by the USRP sampling rate), no channel coding, and commercial hardware with visible phase noise.
 \end{itemize}
 
@@ -66,11 +66,11 @@ The difference comes from the synthesis. A flat reflector keeps the very narrow 
 
 Table~\ref{tab:ch4-link} reports the link measurements at 24.45~GHz, with about 0~dBm fed to the transmit antenna.
 \begin{itemize}
-    \item Through the SES, 64-QAM reaches an EVM of $-29.9$~dB, with SER below $10^{-5}$, at the centre of the spot. At its 3~dB edge the EVM is $-27.5$~dB.
-    \item Through the metal plate, the same position only supports QPSK, with an EVM of $-13.2$~dB.
+    \item Through the SES, 64-point quadrature amplitude modulation (64-QAM) reaches an EVM of $-29.9$~dB, with SER below $10^{-5}$, at the centre of the spot. At its 3~dB edge the EVM is $-27.5$~dB.
+    \item Through the metal plate, the same position only supports quadrature phase-shift keying (QPSK), with an EVM of $-13.2$~dB.
     \item The uplink is 0.5--1.5~dB worse in EVM than the downlink, because the active hardware (e.g., the power amplifier) is not reciprocal.
     \item At the spot centre the EVM saturates: 3~dB more received power improves it by only 2.4~dB, because phase noise and nonlinear distortion dominate.
-    \item With 64-QAM, \eqref{eq:ch4-se} gives $\eta = 3.75$~bit/s/Hz, i.e., 1.5~Gbit/s over the 400~MHz channel at an uncoded SER below $10^{-4}$.
+    \item With 64-QAM, \eqref{eq:ch4-se} gives $\eta = 3.75$~bit/s/Hz. Extrapolated to all 50 subchannels, this corresponds to an estimated 1.5~Gbit/s over the 400~MHz channel at an uncoded SER below $10^{-4}$; the subchannels were measured one at a time, so this is not a measured aggregate throughput.
 \end{itemize}
 
 \begin{table}[!htbp]

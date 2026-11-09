@@ -16,18 +16,18 @@ At 60~GHz, indoor links suffer from high path loss and are easily blocked by wal
 \subsection{Contributions and Methodology}
 Sabato~\cite{Sabato2025} builds a complete design flow for passive 60~GHz SESs and applies it to a real laboratory:
 \begin{itemize}
-    \item \textbf{Unit cell and substrate.} The cell is a square patch on a grounded single-layer PCB, about $\lambda/2$ wide at 60~GHz. It was analysed with Floquet ports in CST for patch widths of 0.2--2.4~mm at 58, 60 and 62~GHz.
+    \item \textbf{Unit cell and substrate.} The cell is a square patch on a grounded single-layer printed circuit board (PCB), about $\lambda/2$ wide at 60~GHz. It was analysed with Floquet ports in CST for patch widths of 0.2--2.4~mm at 58, 60 and 62~GHz.
     \begin{itemize}
         \item FR4 ($\varepsilon_r = 4.2$--4.8, $\tan\delta = 0.02$--0.025) is rejected for its high losses in favour of Rogers RO3003 ($\varepsilon_r = 3.0$, $\tan\delta = 0.0010$).
         \item The 0.13 and 0.25~mm laminates exceed $360^\circ$ of phase, but their steep phase slopes and resonance spikes make them sensitive to fabrication errors.
         \item The 0.76~mm laminate reaches only about $300^\circ$.
         \item The 0.51~mm laminate gives a smooth, full $360^\circ$ that stays stable for incidence angles of $0^\circ$--$50^\circ$, so it is selected.
     \end{itemize}
-    \item \textbf{Phase synthesis.} To redirect a plane wave arriving from $(\theta_I, \phi_I)$ towards $(\theta_b, \phi_b)$, the $i$-th cell must provide the reflection phase
+    \item \textbf{Phase synthesis.} To redirect a plane wave arriving from $(\theta_I, \phi_I)$ towards $(\theta_b, \phi_b)$, the $i$-th cell must provide the reflection phase below, which combines Eqs.~(3.1.1)--(3.1.3) of~\cite{Sabato2025} into one expression:
     \begin{equation}\label{eq:ch5-phase}
     \varphi_R(x_i,y_i) = -k_0\left[\sin\theta_b\left(x_i\cos\phi_b + y_i\sin\phi_b\right) + \sin\theta_I\left(x_i\cos\phi_I + y_i\sin\phi_I\right)\right],
     \end{equation}
-    where $(x_i, y_i)$ is the cell position and $k_0$ the free-space wavenumber. The first term tilts the reflected wavefront and the second removes the phase of the incident plane wave~\cite{Sabato2025}. The phases from \eqref{eq:ch5-phase} are converted to patch widths by interpolating the 60~GHz phase curve. The resulting layout is exported from MATLAB as a DXF file and simulated in CST.
+    where $(x_i, y_i)$ is the cell position and $k_0$ the free-space wavenumber. The first term tilts the reflected wavefront and the second removes the phase of the incident plane wave~\cite{Sabato2025}. The phases from \eqref{eq:ch5-phase} are converted to patch widths by interpolating the 60~GHz phase curve. The resulting layout is exported from MATLAB as a drawing exchange format (DXF) file and simulated in CST.
     \item \textbf{Validation and deployment.}
     \begin{itemize}
         \item Test arrays of $10 \times 10$ cells ($5\lambda$ side) and $24 \times 24$ cells ($12\lambda$ side) steer a normally incident wave to $\theta_b = 30^\circ$.
