@@ -1,0 +1,70 @@
+% =====================================================================
+% TÀI LIỆU THAM KHẢO (REFERENCES)
+% Danh sách này do BibTeX (kiểu IEEEtran) tạo từ MyRef.bib, được lưu sẵn thành
+% file .tex trong project. Nhờ vậy, khi bấm đúp vào một tài liệu trong PDF,
+% Overleaf nhảy tới đúng dòng ở đây thay vì báo
+% "Couldn't find the corresponding source file".
+%
+% Lưu ý: danh sách này KHÔNG tự cập nhật khi sửa MyRef.bib. Muốn thêm/sửa tài
+% liệu thì sửa trực tiếp các \bibitem bên dưới; giữ nguyên khóa trong {} vì các
+% chương trích dẫn bằng khóa đó (ví dụ \cite{Freni2023}). Thứ tự [1]-[5] là thứ
+% tự các \bibitem.
+% Muốn quay lại cách tự động: trong main.tex thay dòng \input{References} bằng
+%   \bibliographystyle{IEEEtran}
+%   \nocite{*}
+%   \bibliography{MyRef}
+% =====================================================================
+\begin{thebibliography}{1}
+\providecommand{\url}[1]{#1}
+\csname url@samestyle\endcsname
+\providecommand{\newblock}{\relax}
+\providecommand{\bibinfo}[2]{#2}
+\providecommand{\BIBentrySTDinterwordspacing}{\spaceskip=0pt\relax}
+\providecommand{\BIBentryALTinterwordstretchfactor}{4}
+\providecommand{\BIBentryALTinterwordspacing}{\spaceskip=\fontdimen2\font plus
+\BIBentryALTinterwordstretchfactor\fontdimen3\font minus
+  \fontdimen4\font\relax}
+\providecommand{\BIBforeignlanguage}[2]{{%
+\expandafter\ifx\csname l@#1\endcsname\relax
+\typeout{** WARNING: IEEEtran.bst: No hyphenation pattern has been}%
+\typeout{** loaded for the language `#1'. Using the pattern for}%
+\typeout{** the default language instead.}%
+\else
+\language=\csname l@#1\endcsname
+\fi
+#2}}
+\providecommand{\BIBdecl}{\relax}
+\BIBdecl
+
+\bibitem{Freni2023}
+A.~Freni, M.~Beccaria, A.~Mazzinghi, A.~Massaccesi, and P.~Pirinoli,
+  ``Low-profile and low-visual impact smart electromagnetic curved passive
+  skins for enhancing connectivity in urban scenarios,'' \emph{Electronics},
+  vol.~12, no.~21, Nov. 2023, {Art. no.} 4491.
+
+\bibitem{Beccaria2025B}
+M.~Beccaria, A.~Freni, A.~Mazzinghi, and P.~Pirinoli, ``On the features of
+  curved, passive reconfigurable smart electromagnetic skins,''
+  \emph{Scientific Reports}, vol.~15, no.~1, 2025, {Art. no.} 32277.
+
+\bibitem{AlNuaimi2026}
+M.~K.~T. Al-Nuaimi, Z.~Huang, G.-L. Huang, R.-S. Chen, Y.~Vardaxoglou, and
+  A.~A. Kishk, ``Optically transparent smart electromagnetic skin for
+  energy-free {5G} signal redirection in smart cities,'' \emph{IEEE Antennas
+  and Wireless Propagation Letters}, vol.~25, no.~1, pp. 79--83, Jan. 2026.
+
+\bibitem{Vaquero2026}
+{\'A}.~F. Vaquero, S.~M. Feito, {\'A}.~Pend{\'a}s-Recondo, M.~R. Pino, and
+  M.~Arrebola, ``Smart electromagnetic skin for near-field {mmWave}
+  communications: Design, system implementation, and end-to-end link
+  evaluation,'' \emph{IEEE Open Journal of Antennas and Propagation}, vol.~7,
+  no.~3, pp. 1091--1103, Jun. 2026.
+
+\bibitem{Sabato2025}
+\BIBentryALTinterwordspacing
+C.~Sabato, ``Smart electromagnetic skins for communication and localization
+  systems,'' Master's thesis, Politecnico di Torino, Turin, Italy, Oct. 2025.
+  [Online]. Available: \url{https://webthesis.biblio.polito.it/37695/}
+\BIBentrySTDinterwordspacing
+
+\end{thebibliography}
