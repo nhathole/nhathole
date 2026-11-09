@@ -16,17 +16,24 @@ Fifth-generation (5G) links in the millimeter-wave (mmWave) band suffer from hig
 \subsection{Contributions and Methodology}
 Freni \textit{et al.}~\cite{Freni2023} propose installing a \emph{curved} SES on existing street-light or traffic-light poles, hidden inside a cylindrical radome. According to the authors, this is the first performance analysis of such a solution in a real urban scenario. Fig.~\ref{fig:ch1-geometry} shows the geometry. The SES sits between a pole of 240~mm diameter and a radome of at most 300~mm diameter, with a minimum curvature radius of 175~mm and a horizontal aperture of $96^\circ$. Its equivalent planar size is $300 \times 340$~mm (about $27.5\lambda_0 \times 31\lambda_0$ at 27.5~GHz), discretized into $55 \times 62$ unit cells.
 
-Each cell is a square metallic patch of side $W$ on a 0.8~mm grounded DiClad527 substrate ($\varepsilon_r = 2.55$, $\tan\delta = 0.0022$), with a 5.45~mm period ($\lambda_0/2$ at 27.5~GHz); the substrate is thin enough to be bent. The curvature radius is large (about $15\lambda$ at 26~GHz), so the cell response is computed with an infinite periodic model, which the authors cross-checked against finite planar and curved $5 \times 5$ arrays. The phase delay that the $ij$-th cell must introduce is~\cite{Freni2023}
-\begin{equation}\label{eq:ch1-phase}
-\Delta\varphi_{ij} = k_0\,\hat{\mathbf{k}}_0\cdot\mathbf{r}_{ij} - k_0\,\hat{\mathbf{k}}\cdot\mathbf{r}_{ij} + f(u_i,v_j) + \varphi_0 ,
-\end{equation}
-where $k_0$ is the free-space wavenumber, $\hat{\mathbf{k}}_0$ the direction of the incident plane wave, $\mathbf{r}_{ij}$ the position of the cell, $f(u_i,v_j)$ the desired phase distribution on a plane $uv$ orthogonal to the unit vector $\hat{\mathbf{k}}$, and $\varphi_0$ an arbitrary constant. With a uniform $f$, \eqref{eq:ch1-phase} produces a pencil beam along $\hat{\mathbf{k}}$. For street coverage, $f$ is instead synthesized with Powell's direction-set algorithm to obtain a cosecant-squared beam. All results are full-wave simulations (CST Microwave Studio) in the Italian 5G band, 26.5--27.5~GHz.
-
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=0.8\textwidth]{Images/ch1_freni_fig3.png}
     \caption[Geometry of the curved SES on a light pole]{Geometry of the curved SES placed between the metallic pole and the cylindrical radome: (a) top view, (b) lateral view (adapted from~\cite{Freni2023}).}
     \label{fig:ch1-geometry}
+\end{figure}
+
+Each cell is a square metallic patch of side $W$ on a 0.8~mm grounded DiClad527 substrate ($\varepsilon_r = 2.55$, $\tan\delta = 0.0022$), with a 5.45~mm period ($\lambda_0/2$ at 27.5~GHz); the substrate is thin enough to be bent. The curvature radius is large (about $15\lambda$ at 26~GHz), so the cell response is computed with an infinite periodic model, which the authors cross-checked against finite planar and curved $5 \times 5$ arrays. The phase delay that the $ij$-th cell must introduce is~\cite{Freni2023}
+\begin{equation}\label{eq:ch1-phase}
+\Delta\varphi_{ij} = k_0\,\hat{\mathbf{k}}'\cdot\mathbf{r}'_{ij} - k_0\,\hat{\mathbf{k}}\cdot\mathbf{r}'_{ij} + f(u_i,v_j) + \varphi_0 ,
+\end{equation}
+where $k_0$ is the free-space wavenumber, $\hat{\mathbf{k}}'$ the direction of the incident plane wave, $\mathbf{r}'_{ij}$ the center of the $ij$-th element, $f(u_i,v_j)$ the desired phase distribution on a plane $uv$ orthogonal to the unit vector $\hat{\mathbf{k}}$, and $\varphi_0$ an arbitrary constant (Fig.~\ref{fig:ch1-problem}). With a uniform $f$, \eqref{eq:ch1-phase} produces a pencil beam along $\hat{\mathbf{k}}$. For street coverage, $f$ is instead synthesized with Powell's direction-set algorithm to obtain a cosecant-squared beam. All results are full-wave simulations (CST Microwave Studio) in the Italian 5G band, 26.5--27.5~GHz.
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.55\textwidth]{Images/ch1_freni_fig6.png}
+    \caption[Geometry of the phase-delay calculation]{Geometry of the phase-delay calculation in \protect\eqref{eq:ch1-phase}: incident direction $\hat{\mathbf{k}}'$, desired direction $\hat{\mathbf{k}}$, center $\mathbf{r}'_{ij}$ of the $ij$-th element, and phase distribution $f(u_i,v_j)$ on the plane orthogonal to $\hat{\mathbf{k}}$ (adapted from~\cite{Freni2023}).}
+    \label{fig:ch1-problem}
 \end{figure}
 
 \subsection{Limitations of the Approach}
