@@ -39,7 +39,7 @@ where $k_0$ is the free-space wavenumber, $\hat{\mathbf{k}}'$ the direction of t
 \subsection{Limitations of the Approach}
 \begin{itemize}
     \item The square-patch cell covers only about $290^\circ$ of reflection phase instead of $360^\circ$, because $W$ must stay between 1 and 4~mm to avoid a resonance near 4.6~mm. The required phase is therefore only approximated on part of the surface, which degrades performance~\cite{Freni2023}.
-    \item On a curved surface the local incidence angle varies from cell to cell. Even at normal incidence on the central cell, it reaches $47^\circ$ at the edges, and it grows further with the incidence angle $\theta^i$.
+    \item On a curved surface the local incidence angle varies from cell to cell. Even at normal incidence on the central cell, the maximum incidence angle on the elements is $47^\circ$, and it increases by $\theta^i$ when the wave arrives obliquely~\cite{Freni2023}.
     \item The BS field is modelled as a plane wave (far-field illumination), and the study is purely numerical: no prototype was built or measured.
 \end{itemize}
 
@@ -52,7 +52,7 @@ In the urban case study, the SES stands 45~m from the BS, with incidence $\theta
 \begin{equation}\label{eq:ch1-power}
 S_i = \frac{\mathrm{EIRP}}{4\pi \Delta_{\mathrm{BS\text{-}SES}}^2}, \qquad S_s = \frac{S_i\,\mathrm{RCS}(\hat{\mathbf{R}})}{4\pi R^2},
 \end{equation}
-where $S_i$ is the power density incident on the SES, $\Delta_{\mathrm{BS\text{-}SES}}$ the BS--SES distance, $\mathrm{EIRP} = 1$~W the effective isotropic radiated power (EIRP) of the BS, $S_s$ the power density scattered to a ground point, and $R$ and $\hat{\mathbf{R}}$ the distance and direction of that point from the SES. According to \eqref{eq:ch1-power}, the scattered power density is about 20~dB lower than the density radiated directly by the BS, because the small SES intercepts only a small part of the BS power. It is nevertheless the only signal reaching the street, and it is enough for a stable link. Ripples in the shaped beam come from diffraction at the SES edges, since the plane wave illuminates the whole surface uniformly.
+where $S_i$ is the power density incident on the SES, $\Delta_{\mathrm{BS\text{-}SES}}$ the BS--SES distance, $\mathrm{EIRP} = 1$~W the effective isotropic radiated power (EIRP) of the BS, $S_s$ the power density scattered to a ground point, and $R$ and $\hat{\mathbf{R}}$ the distance and direction of that point from the SES. The first expression is printed in~\cite{Freni2023} without the square on $\Delta_{\mathrm{BS\text{-}SES}}$; the square is restored here, because a power density must fall with the square of the distance, as the second expression does. According to \eqref{eq:ch1-power}, the scattered power density is about 20~dB lower than the density radiated directly by the BS, because the small SES intercepts only a small part of the BS power. It is nevertheless the only signal reaching the street, and it is enough for a stable link. Ripples in the shaped beam come from diffraction at the SES edges, since the plane wave illuminates the whole surface uniformly.
 
 \begin{table}[!htbp]
     \centering
