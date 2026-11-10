@@ -44,7 +44,7 @@ where $k_0$ is the free-space wavenumber, $\hat{\mathbf{k}}'$ the direction of t
 \end{itemize}
 
 \subsection{Results and Evaluation}
-Table~\ref{tab:ch1-results} compares the curved SES with two planar SESs of the same height mounted on the same pole. The curved SES never gives a lower maximum radar cross section (RCS) than the planar SES that fits in the same cylindrical radome, and it is about 3~dB higher at 27~GHz~\cite{Freni2023}. The reason is the usable aperture: the curved skin uses the whole arc between pole and radome, while a flat skin tangent to the pole is limited to 180~mm. A flat skin as wide as the chord (262~mm) gains less than 1~dB more. However, it can only be installed by cutting the pole or using a custom-shaped radome, which adds cost and visual impact. Over 26.5--27.5~GHz the maximum RCS of the curved SES varies by less than 1~dB.
+Table~\ref{tab:ch1-results} compares the curved SES with two planar SESs of the same height mounted on the same pole. The curved SES never gives a lower maximum radar cross section (RCS) than the planar SES that fits in the same cylindrical radome, and it is about 3~dB higher at 27~GHz~\cite{Freni2023}. The reason is the usable aperture: the curved skin uses the whole arc between pole and radome, while a flat skin tangent to the pole is limited to 180~mm. A flat skin as wide as the chord (262~mm) gains less than 1~dB more at 27~GHz. However, it can only be installed by cutting the pole or using a custom-shaped radome, which adds cost and visual impact. Over 26.5--27.5~GHz the maximum RCS of the curved SES varies by less than 1~dB.
 
 At 27~GHz, a quarter-wave radome lowers the RCS by 0.9~dB for polytetrafluoroethylene (PTFE, $\tan\delta = 0.0002$) and by 1.2~dB for Lexan ($\tan\delta = 0.01$). The larger drop with Lexan follows from its 50 times higher loss tangent. A $\pm 3^\circ$ error in the incidence angle tilts the beam (a larger incidence angle gives a smaller pointing angle), but the pattern keeps its shape within $\pm 2^\circ$. Installers can therefore fine-tune the coverage by rotating or shifting the SES on the pole.
 
@@ -59,15 +59,13 @@ where $S_i$ is the power density incident on the SES, $\Delta_{\mathrm{BS\text{-
     \caption[Curved versus planar SESs in the same pole--radome volume]{Curved SES versus planar SESs of the same height mounted on the same pole at 27~GHz; maximum RCS values read from Fig.~11(a) of~\cite{Freni2023}.}
     \label{tab:ch1-results}
     \small
-    \begin{tabularx}{\textwidth}{l >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X c c}
+    \begin{tabularx}{\textwidth}{l >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X c}
         \toprule
-        & & & \multicolumn{2}{c}{Maximum RCS} \\
-        \cmidrule(l){4-5}
-        Configuration & Horizontal size (cells) & Radome & (dBm$^2$) & vs.\ curved (dB) \\
+        Configuration & Horizontal size (cells) & Radome & Maximum RCS (dBsm) \\
         \midrule
-        Curved SES (proposed) & 300~mm arc, 262~mm chord (55) & cylindrical, 300~mm diameter & $\approx 27.1$ & reference \\
-        Planar, tangent to pole & 180~mm (33) & cylindrical, 300~mm diameter & $\approx 24.3$ & $\approx -2.8$ \\
-        Planar, chord width & 262~mm (48) & custom shaped & $\approx 28.0$ & $\approx +0.9$ \\
+        Curved SES (proposed) & 300~mm arc, 262~mm chord (55) & cylindrical, 300~mm diameter & $\approx 27.1$ \\
+        Planar, tangent to pole & 180~mm (33) & cylindrical, 300~mm diameter & $\approx 24.3$ \\
+        Planar, chord width & 262~mm (48) & custom shaped & $\approx 28.0$ \\
         \bottomrule
     \end{tabularx}
 \end{table}
