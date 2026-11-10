@@ -56,16 +56,18 @@ where $S_i$ is the power density incident on the SES, $\Delta_{\mathrm{BS\text{-
 
 \begin{table}[!htbp]
     \centering
-    \caption[Curved versus planar SESs in the same pole--radome volume]{Curved SES versus planar SESs of the same height mounted on the same pole at 27~GHz; RCS values are relative to the curved SES~\cite{Freni2023}.}
+    \caption[Curved versus planar SESs in the same pole--radome volume]{Curved SES versus planar SESs of the same height mounted on the same pole at 27~GHz; maximum RCS values read from Fig.~11(a) of~\cite{Freni2023}.}
     \label{tab:ch1-results}
     \small
-    \begin{tabularx}{\textwidth}{l >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X}
+    \begin{tabularx}{\textwidth}{l >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X c c}
         \toprule
-        Configuration & Horizontal size (cells) & Radome & Maximum RCS \\
+        & & & \multicolumn{2}{c}{Maximum RCS} \\
+        \cmidrule(l){4-5}
+        Configuration & Horizontal size (cells) & Radome & (dBm$^2$) & vs.\ curved (dB) \\
         \midrule
-        Curved SES (proposed) & 300~mm arc, 262~mm chord (55) & cylindrical, 300~mm diameter & reference \\
-        Planar, tangent to pole & 180~mm (33) & cylindrical, 300~mm diameter & about $-3$~dB \\
-        Planar, chord width & 262~mm (48) & custom shaped & less than $+1$~dB \\
+        Curved SES (proposed) & 300~mm arc, 262~mm chord (55) & cylindrical, 300~mm diameter & $\approx 27.1$ & reference \\
+        Planar, tangent to pole & 180~mm (33) & cylindrical, 300~mm diameter & $\approx 24.3$ & $\approx -2.8$ \\
+        Planar, chord width & 262~mm (48) & custom shaped & $\approx 28.0$ & $\approx +0.9$ \\
         \bottomrule
     \end{tabularx}
 \end{table}
